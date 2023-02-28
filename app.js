@@ -181,13 +181,11 @@ let joe = new Student('Joe Schmoe', 100, 'Anytown, USA');
 
 
 
-// Student.prototype.greeting = function () {
-//   return `Hi, my name is ${this.name}`;
-// };
-
-Student.prototype.greeting = (name) => {
-  return `Hi, my name is `;
+Student.prototype.greeting = function () {
+  return `Hi, my name is ${this.name}`;
 };
+
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
@@ -218,12 +216,12 @@ Student.prototype.scope = function () {
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+ joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//"this" is student when joe.scope() is invoked.
 // 2. What is "this" when joe.scopeArrow() is invoked?
 //
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// "this" cannot be used as methods in arrow functions
